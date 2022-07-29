@@ -1,0 +1,22 @@
+#!/bin/bash
+
+## Open Applications
+FILE="$HOME/.cache/eww_launch.dashboard"
+EWW=`which eww`
+cmd='xdg-open'
+
+if [[ "$1" == "--firefox" ]]; then
+	${EWW} close-all && rm -rf "$FILE" && firefox &
+
+elif [[ "$1" == "--thunar" ]]; then
+	${EWW} close-all && rm -rf "$FILE" && thunar &
+
+elif [[ "$1" == "--steam" ]]; then
+	${EWW} close-all && rm -rf "$FILE" &&  steam &
+
+elif [[ "$1" == "--spotify" ]]; then
+	${EWW} close-all && rm -rf "$FILE" && spotify &
+
+elif [[ "$1" == "--lutris" ]]; then
+	${EWW} close-all && rm -rf "$FILE" &&  lutris &
+fi

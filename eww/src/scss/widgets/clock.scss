@@ -1,0 +1,34 @@
+.time{
+	background-color: $background;
+	color: $foreground;
+	margin: .5rem;
+	padding: 20px 20px 20px 20px;
+	border-radius: 12px;
+}
+
+.status {
+	color: rgb(8, 85, 8);
+	font-family: rubik, sans-serif;
+	font-size: 20px;
+	font-weight: 300;
+	font-style: italic;
+}
+
+.text-420 {
+	color: rgb(8, 85, 8);
+	font-family: rubik, sans-serif;
+	font-weight: bold;
+	font-size: 30px;
+	padding-left: 3px;
+}
+
+.time-icon {
+	background-image: url("assets/cannabis.svg");
+	background-repeat: no-repeat;
+	background-size: 50px;
+	background-position: center;
+	min-height: 50px;
+	min-width: 50px;
+	border-radius: 50%;
+	padding-right: 10px;
+}

@@ -1,0 +1,52 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;								Windows Section's								  ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(defwindow clock
+    :monitor 0
+    :geometry (geometry :x "30"
+                        :y "50"
+                        :anchor "top left")
+    :windowtype "dock"
+    :wm-ignore true
+(clock))
+
+(defwindow music
+    :monitor 0
+    :geometry (geometry :x "0"
+                        :y "50"
+                        :anchor "top center")
+    :windowtype "dock"
+    :wm-ignore true
+(music))
+
+(defwindow app
+    :monitor 0
+    :geometry (geometry :x "-270"
+                        :y "50"
+                        :anchor "top center")
+    :windowtype "dock"
+    :wm-ignore true
+(app))
+
+(defwindow weather
+    :monitor 0
+    :geometry (geometry :x "0"
+                        :y "300"
+                        :anchor "top center"
+                        :width "380"
+                        :height "230")
+    :windowtype "dock"
+    :wm-ignore true
+(weather))
+
+(defwindow calendar
+    :wm-ignore: true
+    :monitor 0
+    :windowtype "dock"
+    :geometry (geometry :x "-60"
+                        :y "235"
+                        :width "240px"
+                        :height "160px"
+                        :anchor "center")
+    (cal))

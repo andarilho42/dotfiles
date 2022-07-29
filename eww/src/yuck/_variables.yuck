@@ -1,0 +1,27 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;								Variables Section's								  ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;; Time Variables
+(defpoll hour 	        :interval "1s" `date +%H`)
+(defpoll minute         :interval "1s" `date +%M`)
+(defpoll day 	        :interval "1s" `date "+%A"`)
+(defpoll day-abrev 	    :interval "1s" `date "+%a"`)
+(defpoll day-month 	    :interval "1s" `date "+%d"`)
+(defpoll date 	        :interval "1s" `date "+%D"`)
+(defpoll is_420 		:interval "1m"  "~/.config/eww/scripts/420clock.sh --icon")
+
+;; Music Variables
+(defpoll art		:interval "3s"  "~/.config/eww/scripts/music coverloc")
+(defpoll title		:interval "3s"  "~/.config/eww/scripts/music title")
+(defpoll artist		:interval "3s"  "~/.config/eww/scripts/music artist")
+(defpoll playpause	:interval "1s"  "~/.config/eww/scripts/music statusicon")
+
+;; Weather Variables
+(defpoll weather-refresh 	:interval "10m"  "~/.config/eww/scripts/getweather --getdata")
+(defpoll weather-icon 		:interval "10m"  "~/.config/eww/scripts/getweather --icon")
+(defpoll weather-city 		:interval "10m"  "~/.config/eww/scripts/getweather --city")
+(defpoll weather-country 	:interval "10m"  "~/.config/eww/scripts/getweather --country")
+(defpoll weather-hex 		:interval "10m"  "~/.config/eww/scripts/getweather --hex")
+(defpoll temperature 		:interval "10m"  "~/.config/eww/scripts/getweather --temp")
+(defpoll weather-stat 		:interval "10m"  "~/.config/eww/scripts/getweather --stat")

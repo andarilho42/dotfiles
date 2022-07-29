@@ -1,0 +1,131 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;								Widgets Section's								  ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;;  Clock Widgets
+(defwidget clock [] 
+	(box	:class "time"
+			:orientation "v"
+			:space-evenly "false"
+			:valign "center"
+			:halign "center"
+	(box 	:orientation "h"
+			:class "clock"
+			:space-evenly "false"
+	(box 	:class "time-icon")
+	(box	:orientation "v"
+			:class "final-time"
+			:space-evenly "false"
+	(label	:class "status"
+			:text "${is_420}")
+	(label	:class "text-420"
+			:text "4:20")))
+	)	
+)
+
+;;  Music Widgets
+(defwidget music [] 
+	(box 	:class "music-player"
+			:orientation "h" 
+		 	:space-evenly "false"  
+		 	:halign "center"
+	(box 	:class "album_art" 
+		 	:style "background-image: url('${art}');")
+	(box 	:orientation "v" 
+		 	:space-evenly "false"
+		 	:halign "center"
+		 	:spacing 10 
+	(label  :class "artist"
+		 	:limit-width 15
+		 	:text artist)
+ 	(label  :class "song"
+		 	:limit-width 20
+		 	:text title) 
+	(box 	:orientation "h"  
+		 	:space-evenly "false"
+			:halign "center"
+			:spacing 25
+			(button :class "btn_prev" :onclick "~/.config/eww/scripts/music previous" "")
+			(button :class "btn_play" :onclick "~/.config/eww/scripts/music toggle" playpause)
+			(button :class "btn_next" :onclick "~/.config/eww/scripts/music next" ""))
+		)
+	)
+)
+
+;; Applications Widgets
+(defwidget app[]
+	(box	:orientation "v"
+			:class "applications"
+			:space-evenly "false"
+			:spacing 12
+	(button :class "app-firefox" 
+			:onclick "sh ~/.config/eww/scripts/open_apps --firefox" "")
+	(button :class "app-reddit" 
+			:onclick "~/.config/eww/scripts/open_apps --steam" "")
+	(button :class "app-telegram" 
+			:onclick "~/.config/eww/scripts/open_apps --thunar" "")
+	(button :class "app-spotify" 
+			:onclick "~/.config/eww/scripts/open_apps --spotify" "")
+	(button :class "app-lutris" 
+			:onclick "~/.config/eww/scripts/open_apps --lutris" "")
+	)
+)
+
+;; Weather Widgets
+(defwidget weather [] 
+	(box 	:class "weather" 
+		 	:orientation "h" 
+		 	:space-evenly "false"
+		 	:halign "center" 
+	(box 	:orientation "v" 
+		 	:space-evenly "false"
+			:class "box-date"
+			(label 	:class "weather-day"
+			:text "${day}")
+		(label	:class "day-month"
+				:text "${day-month}"))
+	(box 	:orientation "v" 
+		 	:space-evenly "false"
+		(box 	:orientation "h"
+				:class "weather-stat"
+				:halign "center" 
+		(label 	:wrap "true"
+				:limit-width 15
+				:text "${weather-stat}"))
+		(box 	:class "weather-display"
+				:orientation "h"
+				:space-evenly "false"
+			(box :class "weather-icon" 
+				   :style "color: ${weather-hex}" {weather-icon})
+			(label 	:class "temp-region"
+					:text "${temperature}"))
+		(box 	:orientation "v" 
+				:halign "center"
+			(label 	:class "city"
+					:text "${weather-city}")
+		)
+	)
+))
+
+;;Calendar
+(defwidget cal []
+	(calendar :halign "center" :valign "center" :class "cal" :month 8 :year 2022))
+
+;; Main Widgets
+(defwidget dashboard[]
+	(box :orientation "h"	 
+		 :class "dashboard"
+		 :space-evenly "false"
+		 (app)
+	(box :orientation "v"
+		 :space-evenly "false"
+			(profile)
+			(clock))
+  	(box :orientation "v" :space-evenly "false"
+  	(box :orientation "h" :space-evenly "false"
+	(box :orientation "v"
+	     :space-evenly "false"
+			(weather)
+			(music))))
+	)
+)
